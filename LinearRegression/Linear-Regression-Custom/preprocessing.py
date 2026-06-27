@@ -36,8 +36,8 @@ def scale_features(X_train, X_test):
 
 # PART 2 — TRAIN/TEST SPLIT (80% train, 20% test)
 
-def train_test_split(X, y, test_size=0.2):
-    # total rows kitni hain
+def train_test_split(X, y, test_size = 0.2 ):
+    # total rows _size=0.2kitni hain
     n = len(y)
 
     # rows ko shuffle karo — random order mein
