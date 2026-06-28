@@ -3,6 +3,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+import matplotlib.pyplot as plt
 
 # ─────────────────────────────────────────────────────────────
 # DATASET
@@ -132,3 +133,26 @@ for desc, price in zip(descriptions, prices):
 print("\n" + "=" * 52)
 print("  Done.")
 print("=" * 52)
+
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+
+# Graph 1 — Size vs Price
+axes[0].scatter(X[:, 0], y, color="blue")
+axes[0].set_xlabel("Size (Marla)")
+axes[0].set_ylabel("Price (Crore PKR)")
+axes[0].set_title("Size vs Price")
+
+# Graph 2 — Bedrooms vs Price
+axes[1].scatter(X[:, 1], y, color="green")
+axes[1].set_xlabel("Bedrooms")
+axes[1].set_ylabel("Price (Crore PKR)")
+axes[1].set_title("Bedrooms vs Price")
+
+# Graph 3 — Age vs Price
+axes[2].scatter(X[:, 2], y, color="red")
+axes[2].set_xlabel("Age (Years)")
+axes[2].set_ylabel("Price (Crore PKR)")
+axes[2].set_title("Age vs Price")
+
+plt.tight_layout()
+plt.show()
