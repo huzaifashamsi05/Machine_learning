@@ -22,7 +22,7 @@ class LogisticRegressionCustom:
     # ─────────────────────────────────────────
     def sigmoid(self, z):
         # clip karo — overflow se bachao
-        z = np.clip(z, -500, 500)
+        z = np.clip(z, -10, 10)
         return 1 / (1 + np.exp(-z))
 
     # ─────────────────────────────────────────

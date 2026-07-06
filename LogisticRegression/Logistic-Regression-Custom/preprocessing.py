@@ -37,6 +37,11 @@ def scale_features(X_train, X_val, X_test):
     X_val_s   = (X_val   - mean) / std
     X_test_s  = (X_test  - mean) / std
 
+    # NaN values fix karo ← pehle scale, phir nan fix
+    X_train_s = np.nan_to_num(X_train_s, nan=0.0)
+    X_val_s   = np.nan_to_num(X_val_s,   nan=0.0)
+    X_test_s  = np.nan_to_num(X_test_s,  nan=0.0)
+
     return X_train_s, X_val_s, X_test_s, mean, std
 
 # ─────────────────────────────────────────────
