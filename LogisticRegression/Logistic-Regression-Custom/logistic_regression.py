@@ -44,7 +44,7 @@ class LogisticRegressionCustom:
             z = X.dot(self.weights) + self.bias
 
             # STEP 2: probability nikalo
-            y_predicted = self.sigmoid(z)
+            y_predicted = self.sigmoid(z)   
 
             # STEP 3: gradients nikalo
             error = y_predicted - y
