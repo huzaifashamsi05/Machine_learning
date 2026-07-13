@@ -1,0 +1,8 @@
+{
+    "part1_best_model": "PoissonRegressionCustom",
+    "part1_reason": "Count target, non-negative, beats baseline",
+    "part2_best_model": "PerceptronCustom",
+    "part2_reason": "Binary decision, fast, interpretable",
+    "part3_best_model": "NaiveBayesCustom",
+    "part3_reason": "Text classification, multi-class, log probs"
+}
