@@ -39,80 +39,80 @@ scholarship_status       = np.random.choice([0, 1], n)
 internet_access          = np.random.choice([0, 1], n)
 
 # ─────────────────────────────────────────────
-# ADVISOR NOTES — text data
-# ─────────────────────────────────────────────
-
-academic_notes = [
-    "student struggling with exam preparation",
-    "failed midterm needs academic support",
-    "poor quiz scores needs tutoring help",
-    "difficulty understanding course material",
-    "requested help with assignment deadlines",
-]
-
-attendance_notes = [
-    "missed multiple classes this week",
-    "absent frequently due to transport issues",
-    "attendance below required percentage",
-    "missed labs and practical sessions",
-    "irregular attendance pattern observed",
-]
-
-financial_notes = [
-    "fee pending unable to access resources",
-    "financial difficulty affecting studies",
-    "scholarship issue needs resolution",
-    "cannot afford course materials",
-    "fee issue causing stress and absence",
-]
-
-personal_notes = [
-    "family issues affecting performance",
-    "health problems causing absences",
-    "personal crisis needs counseling support",
-    "mental health concerns raised by student",
-    "dealing with personal emergency situation",
-]
-
-stable_notes = [
-    "student performing well no issues",
-    "good progress all assignments submitted",
-    "active participation no concerns raised",
-    "on track with studies no support needed",
-    "excellent attendance and performance",
-]
-
-# ─────────────────────────────────────────────
 # TARGET 3 — dominant_issue_type
 # ─────────────────────────────────────────────
 
-issue_types  = ["Academic", "Attendance", "Financial",
-                "Personal", "Stable"]
-issue_notes  = [academic_notes, attendance_notes,
-                financial_notes, personal_notes, stable_notes]
+issue_types = ["Academic", "Attendance", "Financial",
+               "Personal", "Stable"]
+
+academic_notes = [
+    "struggling with calculus exam preparation",
+    "quiz grades dropping needs tutoring urgently",
+    "coursework submission poor understanding subject",
+    "homework incomplete lecture comprehension weak",
+    "midterm failed needs extra academic coaching",
+]
+
+attendance_notes = [
+    "absent skipping morning sessions repeatedly",
+    "transport late irregular punctuality problem",
+    "missed practicals labs consistently absent",
+    "truancy pattern observed skipping school",
+    "below minimum threshold attendance warning issued",
+]
+
+financial_notes = [
+    "fee overdue dues outstanding payment delayed",
+    "scholarship revoked pending semester charges",
+    "defaulter blocked portal unpaid outstanding",
+    "cannot afford textbooks payment overdue",
+    "financial hardship dues unpaid charges pending",
+]
+
+personal_notes = [
+    "grief bereavement family trauma counseling",
+    "anxiety depression mental health therapy",
+    "domestic crisis hospitalized chronic illness",
+    "emotional distress family emergency referred",
+    "psychological support personal tragedy intervention",
+]
+
+stable_notes = [
+    "excellent consistent progress no worries",
+    "performing great assignments submitted timely",
+    "no intervention needed doing wonderfully",
+    "active engaged thriving academically stable",
+    "on track zero concerns outstanding performer",
+]
+
+all_notes = [academic_notes, attendance_notes,
+             financial_notes, personal_notes, stable_notes]
 
 dominant_issue = []
 advisor_notes  = []
 
+np.random.seed(99)
 for i in range(n):
-    # issue decide karo features se
-    if fee_pending[i] > 10000:
-        issue = "Financial"
-    elif attendance_pct[i] < 40:
-        issue = "Attendance"
-    elif previous_exam_score[i] < 40:
+    # balanced random assignment
+    rand = np.random.random()
+    if rand < 0.20:
         issue = "Academic"
-    elif counselor_visits[i] >= 3:
+    elif rand < 0.40:
+        issue = "Attendance"
+    elif rand < 0.60:
+        issue = "Financial"
+    elif rand < 0.80:
         issue = "Personal"
     else:
         issue = "Stable"
 
     dominant_issue.append(issue)
-    idx   = issue_types.index(issue)
-    note  = np.random.choice(issue_notes[idx])
+    idx  = issue_types.index(issue)
+    note = np.random.choice(all_notes[idx])
     advisor_notes.append(note)
 
 dominant_issue = np.array(dominant_issue)
+advisor_notes  = np.array(advisor_notes)
 
 # ─────────────────────────────────────────────
 # TARGET 2 — high_risk_intervention

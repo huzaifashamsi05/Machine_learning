@@ -1,48 +1,48 @@
 {
     "poisson": {
-        "mae": 2.0222,
-        "rmse": 2.7121,
-        "poisson_deviance": 1.757,
-        "baseline_mae": 2.5778,
+        "mae": 1.5111,
+        "rmse": 1.9437,
+        "poisson_deviance": 1.0751,
+        "baseline_mae": 2.143,
         "beats_baseline": true
     },
     "perceptron": {
-        "accuracy": 0.9,
-        "precision": 0.9556,
-        "recall": 0.86,
-        "f1_score": 0.9053,
+        "accuracy": 0.8444,
+        "precision": 0.8431,
+        "recall": 0.8776,
+        "f1_score": 0.86,
         "TP": 43,
-        "TN": 38,
-        "FP": 2,
-        "FN": 7
+        "TN": 33,
+        "FP": 8,
+        "FN": 6
     },
     "naive_bayes": {
-        "macro_f1": 0.1423,
+        "macro_f1": 1.0,
         "per_class": {
             "Academic": {
-                "precision": 0.1818,
-                "recall": 0.1053,
-                "f1": 0.1333
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
             },
             "Attendance": {
-                "precision": 0.1429,
-                "recall": 0.0952,
-                "f1": 0.1143
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
             },
             "Financial": {
-                "precision": 0.2791,
-                "recall": 0.3636,
-                "f1": 0.3158
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
             },
             "Personal": {
-                "precision": 0.1429,
-                "recall": 0.1538,
-                "f1": 0.1481
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
             },
             "Stable": {
-                "precision": 0.0,
-                "recall": 0.0,
-                "f1": 0.0
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
             }
         }
     }

@@ -100,9 +100,19 @@ y_issue = df["dominant_issue_type"].values
  y_issue_train, y_issue_val, y_issue_test,
  _) = train_val_test_split(X, y_issue)
 
-notes_train = advisor_notes[:len(y_count_train)]
-notes_test  = advisor_notes[len(y_count_train) +
-                             len(y_count_val):]
+# same indices use karo jo split mein use hue
+np.random.seed(42)
+all_indices = np.arange(len(advisor_notes))
+np.random.shuffle(all_indices)
+
+train_count = len(y_count_train)
+val_count   = len(y_count_val)
+
+train_idx_notes = all_indices[:train_count]
+test_idx_notes  = all_indices[train_count + val_count:]
+
+notes_train = advisor_notes[train_idx_notes]
+notes_test  = advisor_notes[test_idx_notes]
 test_ids    = student_ids[test_idx]
 
 print(f"\n  Train size      : {len(y_count_train)}")
