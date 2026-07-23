@@ -103,7 +103,7 @@ def train_linear_svm(X_train, y_train, X_val, y_val, class_names):
     print("[3] TRAINING: Linear SVM (Baseline)")
     print("=" * 60)
     
-    C_values = [0.001, 0.01, 0.1, 1.0, 10.0, 100.0]
+    C_values = [1.0]
     best_model = None
     best_val_acc = 0
     best_C = None
@@ -193,15 +193,11 @@ def train_kernel_svm(X_train, y_train, X_val, y_val, class_names,
     # Define hyperparameter grid
     if kernel_type == 'poly':
         param_grid = [
-            {'degree': d, 'coef0': 1.0, 'C': C}
-            for d in [2, 3, 4]
-            for C in [0.1, 1.0, 10.0]
+            {'degree': 3, 'coef0': 1.0, 'C': 1.0}
         ]
     elif kernel_type == 'rbf':
         param_grid = [
-            {'gamma': g, 'C': C}
-            for g in [0.001, 0.01, 0.1, 1.0]
-            for C in [0.1, 1.0, 10.0]
+            {'gamma': 0.1, 'C': 1.0}
         ]
     else:
         raise ValueError(f"Unknown kernel type: {kernel_type}")
