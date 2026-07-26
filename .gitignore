@@ -1,0 +1,17 @@
+﻿fruit_svm_project/data/
+fruit-svm-project/data/
+*.zip
+*.tar.gz
+*.rar
+fruit_svm_project/models/*.pkl
+fruit-svm-project/*.pkl
+*.h5
+*.pt
+*.pth
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
