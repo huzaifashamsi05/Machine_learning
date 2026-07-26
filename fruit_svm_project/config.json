@@ -1,0 +1,21 @@
+{
+  "img_size": 64,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "test_ratio": 0.15,
+  "min_images_per_class": 80,
+  "hist_bins": 16,
+  "hog_orientations": 9,
+  "hog_cell_size": 8,
+  "lbp_points": 8,
+  "lbp_radius": 1,
+  "linear_C": 1.0,
+  "linear_lr": 0.001,
+  "linear_epochs": 2000,
+  "kernel_C": 10.0,
+  "kernel_lr": 0.01,
+  "kernel_epochs": 1000,
+  "rbf_gamma": 0.05,
+  "poly_degree": 3,
+  "poly_coef": 1.0
+}
